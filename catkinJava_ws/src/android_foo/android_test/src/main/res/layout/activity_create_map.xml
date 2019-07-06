@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >-->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <org.ros.android.view.visualization.VisualizationView
+        android:id="@+id/visualization"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1" />
+    <org.ros.android.view.VirtualJoystickView
+        android:id="@+id/virtual_joystick"
+        android:layout_width="300dip"
+        android:layout_height="300dip"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true" />
+    <org.ros.android.view.RosImageView
+        android:id="@+id/image"
+        android:layout_height="300dip"
+        android:layout_width="300dip"
+        android:src="@mipmap/icon"
+        android:onClick="startCamerView"
+        >
+    </org.ros.android.view.RosImageView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="3dip"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true">
+
+            <ToggleButton
+                android:id="@+id/follow_me_toggle_button"
+                style="@style/ButtonFont"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="onFollowMeToggleButtonClicked"
+                android:textOff="Track"
+                android:textOn="Track" />
+
+            <Button
+                android:id="@+id/clear_map_button"
+                style="@style/ButtonFont"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="onClearMapButtonClicked"
+                android:text="Clear" />
+
+            <Button
+                android:id="@+id/save_map_button"
+                style="@style/ButtonFont"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="onSaveMapButtonClicked"
+                android:text="Save" />
+        </LinearLayout>
+</RelativeLayout>

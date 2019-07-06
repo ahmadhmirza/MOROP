@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="Gradle: org.ros.android_core:android_15:0.2.1@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/android_15-0.2.1.aar/37df0a66d209c0ae62d78b3fb75e8e38/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/android_15-0.2.1.aar/37df0a66d209c0ae62d78b3fb75e8e38/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
