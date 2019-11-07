@@ -1,44 +1,10 @@
-
-
-
-/*
- * Copyright (C) 2013 OSRF.
- *
- * Licensed under the Apache License, Version 2.0 (the "License"); you may not
- * use this file except in compliance with the License. You may obtain a copy of
- * the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
- * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
- * License for the specific language governing permissions and limitations under
- * the License.
- */
-
-
-/*
- * Copyright (C) 2012 Google Inc.
- *
- * Licensed under the Apache License, Version 2.0 (the "License"); you may not
- * use this file except in compliance with the License. You may obtain a copy of
- * the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
- * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
- * License for the specific language governing permissions and limitations under
- * the License.
- */
-
+/* 
+* Based on ROSjava example by Damon Kohler
+*/
 package org.example.ahmad.android_test;
 
 import com.google.common.base.Preconditions;
 import com.google.common.collect.Lists;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -46,7 +12,6 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Toast;
 import android.widget.ToggleButton;
-
 import org.ros.address.InetAddressFactory;
 import org.ros.android.BitmapFromCompressedImage;
 import org.ros.android.RosActivity;
@@ -65,9 +30,7 @@ import org.ros.android.view.visualization.layer.RobotLayer;
 import org.ros.node.NodeConfiguration;
 import org.ros.node.NodeMainExecutor;
 import org.ros.time.NtpTimeProvider;
-
 import java.util.concurrent.TimeUnit;
-
 import sensor_msgs.CompressedImage;
 
 public class CreateMap extends RosActivity {
@@ -101,7 +64,6 @@ public class CreateMap extends RosActivity {
         image.setTopicName("/usb_cam/image_raw/compressed");
         image.setMessageType(sensor_msgs.CompressedImage._TYPE);
         image.setMessageToBitmapCallable(new BitmapFromCompressedImage());
-
 
         cameraControlLayer = new CameraControlLayer();
         visualizationView.onCreate(Lists.<Layer>newArrayList(cameraControlLayer,
@@ -145,13 +107,6 @@ public class CreateMap extends RosActivity {
         NodeConfiguration nodeConfiguration =
                 NodeConfiguration.newPublic(InetAddressFactory.newNonLoopback().getHostAddress(),
                         getMasterUri());
-/*        NtpTimeProvider ntpTimeProvider =
-                new NtpTimeProvider(InetAddressFactory.newFromHostString("192.168.0.1"),
-                        nodeMainExecutor.getScheduledExecutorService());
-        ntpTimeProvider.startPeriodicUpdates(1, TimeUnit.MINUTES);
-        nodeConfiguration.setTimeProvider(ntpTimeProvider);*/
-
-
         nodeMainExecutor
                 .execute(virtualJoystickView, nodeConfiguration.setNodeName("virtual_joystick"));
         //nodeMainExecutor.execute(systemCommands, nodeConfiguration);
