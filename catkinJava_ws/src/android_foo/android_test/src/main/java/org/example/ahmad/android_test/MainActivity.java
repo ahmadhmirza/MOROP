@@ -1,18 +1,6 @@
-/*
- * Copyright (C) 2011 Google Inc.
- *
- * Licensed under the Apache License, Version 2.0 (the "License"); you may not
- * use this file except in compliance with the License. You may obtain a copy of
- * the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
- * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
- * License for the specific language governing permissions and limitations under
- * the License.
- */
+/**
+* @author ahmadhassan.mirza@gmail.com (Ahmad H. Mirza)
+*/
 
 package org.example.ahmad.android_test;
 
@@ -21,27 +9,27 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
-
-/**
- * @author damonkohler@google.com (Damon Kohler)
- */
 public class MainActivity extends AppCompatActivity {
-
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
 
     }
-
-
+    /*
+    *Function to start the automatic navigation activity.
+    *Uses several sensor inputs to drive the robot
+    * to the location specified by the user using cartesian co-ordinates.
+    */
     public void autoNavStart(View view) {
 
         Intent intent = new Intent(this, AutoNav.class);
         startActivity(intent);
     }
-
+    /*
+    *Function to start the map creation activity.
+    *Uses lidar input to create a 2-d map of the surroundings.
+    */    
     public void mapViewStart(View view) {
 
         Intent intent = new Intent(this, CreateMap.class);
