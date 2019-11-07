@@ -1,5 +1,7 @@
 /**
 * @author ahmadhassan.mirza@gmail.com (Ahmad H. Mirza)
+*
+* Code in this file and associated modules is based on examples provided by Damon Kohler for RosJava Module.
 */
 
 package org.example.ahmad.android_test;
