@@ -1,5 +1,9 @@
 package org.example.ahmad.android_test;
 
+/**
+ * A RosJava based publisher class
+ * Based on example by Damon Kohler
+ */
 
 import org.ros.namespace.GraphName;
 import org.ros.node.AbstractNodeMain;
